@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import './Login.css';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import {
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+} from 'firebase/auth';
 import { auth } from './firebase';
 
 function Login() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -12,11 +16,10 @@ function Login() {
     event.preventDefault();
     // do the login logic...
 
-    auth
-      .signInWithEmailAndPassword(email, password)
-      .then((auth) => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then(() => {
         // logged in, redirect to homepage
-        history.push("/");
+        navigate("/");
       })
       .catch((e) => alert(e.message));
   };
@@ -25,11 +28,10 @@ function Login() {
     event.preventDefault();
     // do the register logic...
 
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((auth) => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(() => {
         // created a user and logged in...
-        history.push("/");
+        navigate("/");
       })
       .catch((e) => alert(e.message));
   };
