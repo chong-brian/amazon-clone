@@ -8,10 +8,10 @@
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^9.3.1",
     "@mui/material": "^9.3.1",
-    "firebase": "^12.14.0",
+    "firebase": "^12.17.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.5",
-    "react-router-dom": "^7.14.0"
+    "react-router-dom": "^7.18.2"
   },
   "scripts": {
     "start": "vite",
@@ -45,6 +45,6 @@
     "@vitejs/plugin-react": "^5.2.0",
     "eslint": "^9.7.0",
     "eslint-plugin-react": "^7.37.5",
-    "vite": "^7.3.1"
+    "vite": "^8.2.1"
   }
 }
