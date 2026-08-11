@@ -2,12 +2,14 @@
   "name": "amazon-clone",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "npm@11.19.0",
   "dependencies": {
-    "@material-ui/core": "^4.11.1",
-    "@material-ui/icons": "^4.11.2",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^9.3.1",
+    "@mui/material": "^9.3.1",
     "firebase": "^12.17.1",
     "react": "^19.2.7",
-    "react-currency-format": "^1.1.0",
     "react-dom": "^19.2.5",
     "react-router-dom": "^7.18.2"
   },

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { onAuthStateChanged } from 'firebase/auth';
 import Header from './Header';
 import Home from './Home';
 import Checkout from './Checkout';
@@ -15,7 +16,7 @@ function App() {
   // Piece of code which runs based on a given condition
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+    const unsubscribe = onAuthStateChanged(auth, (authUser) => {
       if (authUser) {
         // the user is logged in...
 
@@ -43,19 +44,27 @@ function App() {
     <>
       <Router>
         <div className='app'>
-          <Switch>
-            <Route path='/checkout'>
-              <Header />
-              <Checkout />
-            </Route>
-            <Route path='/login'>
-              <Login />
-            </Route>
-            <Route path='/'>
-              <Header />
-              <Home />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route
+              path='/checkout'
+              element={
+                <>
+                  <Header />
+                  <Checkout />
+                </>
+              }
+            />
+            <Route path='/login' element={<Login />} />
+            <Route
+              path='/'
+              element={
+                <>
+                  <Header />
+                  <Home />
+                </>
+              }
+            />
+          </Routes>
         </div>
       </Router>
     </>
