@@ -1,6 +1,7 @@
-import firebase from 'firebase';
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
 
-const firebaseApp = firebase.initializeApp({
+const firebaseApp = initializeApp({
     apiKey: "AIzaSyDL38gc1lH2OUcCdSXEnG753bKR5vtbxLU",
     authDomain: "clone-f5fa5.firebaseapp.com",
     databaseURL: "https://clone-f5fa5.firebaseio.com",
@@ -10,6 +11,6 @@ const firebaseApp = firebase.initializeApp({
     appId: "1:330574452919:web:284929c6cc182b1c249532",
 });
 
-const auth = firebase.auth();
+const auth = getAuth(firebaseApp);
 
 export { auth };
