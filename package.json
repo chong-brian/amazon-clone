@@ -47,5 +47,8 @@
     "eslint": "^9.7.0",
     "eslint-plugin-react": "^7.37.5",
     "vite": "^8.2.1"
+  },
+  "overrides": {
+    "@grpc/grpc-js": "^1.14.7"
   }
 }
